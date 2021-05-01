@@ -30,7 +30,7 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
         setLocationRelativeTo(null);//centrar
         //setLayout(null);
          super.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        super.getContentPane().add(this.carrusel);
+        
 
     }
     public Ventana() {
@@ -66,7 +66,7 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
                 Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+        if(!disponibles.isEmpty()){
         carrusel = new FondoPanel(disponibles.get(index).getRutaImagen());
         this.jLabelNumero = new JLabel(disponibles.get(index).getNumHabitacion());
         
@@ -89,7 +89,15 @@ public class Ventana extends javax.swing.JFrame implements ActionListener{
         carrusel.add(jButtonNext);
         carrusel.add(this.jLabelNumero);
         carrusel.add(this.jLabelTipo);
-    }
+         super.getContentPane().add(this.carrusel);
+        }
+        else{  
+            carrusel = new FondoPanel("/imagenesHabitaciones/error.jpg");
+            super.getContentPane().add(this.carrusel);
+            JOptionPane.showConfirmDialog(null, "No hay habitaciones disponibles"); 
+        }
+      
+       }
 
     @Override
     public void actionPerformed(ActionEvent e) {

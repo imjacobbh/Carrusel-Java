@@ -17,10 +17,10 @@ public class main {
     public static void main(String[] args) {
         ArrayList<Habitacion> hab = new ArrayList<Habitacion>();
         hab.add(new Habitacion(true,"sencilla","112", "/imagenesHabitaciones/sencilla.jpg"));
-        hab.add(new Habitacion(false,"doble","114", "/imagenesHabitaciones/doble.jpg"));
-        hab.add(new Habitacion(false,"triple","116", "/imagenesHabitaciones/triple.jpg"));
+        hab.add(new Habitacion(true,"doble","114", "/imagenesHabitaciones/doble.jpg"));
+        hab.add(new Habitacion(true,"triple","116", "/imagenesHabitaciones/triple.jpg"));
         hab.add(new Habitacion(true,"triple","111", "/imagenesHabitaciones/triple2.jpg"));
-          hab.add(new Habitacion(false,"sencilla","10", "/imagenesHabitaciones/sencilla.jpg"));
+          hab.add(new Habitacion(true,"sencilla","10", "/imagenesHabitaciones/sencilla.jpg"));
         FileOutputStream fs;
         ObjectOutputStream os = null;
         try {
